@@ -149,8 +149,54 @@ public:
         genesis.nNonce = 21256609;
 
         hashGenesisBlock = genesis.GetHash();
+
+        /*
+        	 //////////////
+                //////////////
+                        // calculate Genesis Block
+                        // Reset genesis
+                        consensus.hashGenesisBlock = uint256S("0x");
+                        std::cout << std::string("Begin calculating Mainnet Genesis Block:\n");
+                        if (true && (genesis.GetHash() != consensus.hashGenesisBlock)) {
+                            LogPrintf("Calculating Mainnet Genesis Block:\n");
+                            arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
+                            uint256 hash;
+                            genesis.nNonce = 0;
+                            // This will figure out a valid hash and Nonce if you're
+                            // creating a different genesis block:
+                            // uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
+                            // hashTarget.SetCompact(genesis.nBits, &fNegative, &fOverflow).getuint256();
+                            // while (genesis.GetHash() > hashTarget)
+                            while (UintToArith256(genesis.GetHash()) > hashTarget)
+                            {
+                                ++genesis.nNonce;
+                                if (genesis.nNonce == 0)
+                                {
+                                    LogPrintf("NONCE WRAPPED, incrementing time");
+                                    std::cout << std::string("NONCE WRAPPED, incrementing time:\n");
+                                    ++genesis.nTime;
+                                }
+                                if (genesis.nNonce % 10000 == 0)
+                                {
+                                    LogPrintf("Mainnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
+                                    // std::cout << strNetworkID << " nonce: " << genesis.nNonce << " time: " << genesis.nTime << " hash: " << genesis.GetHash().ToString().c_str() << "\n";
+                                }
+                            }
+                            std::cout << "Mainnet ---\n";
+                            std::cout << "  nonce: " << genesis.nNonce <<  "\n";
+                            std::cout << "   time: " << genesis.nTime << "\n";
+                            std::cout << "   hash: " << genesis.GetHash().ToString().c_str() << "\n";
+                            std::cout << "   merklehash: "  << genesis.hashMerkleRoot.ToString().c_str() << "\n";
+                            // Mainnet --- nonce: 296277 time: 1390095618 hash: 000000bdd771b14e5a031806292305e563956ce2584278de414d9965f6ab54b0
+                        }
+                        std::cout << std::string("Finished calculating Mainnet Genesis Block:\n");
+*/
+
         assert(hashGenesisBlock == uint256("0x000008467c3a9c587533dea06ad9380cded3ed32f9742a6c0c1aebc21bf2bc9b"));
         assert(genesis.hashMerkleRoot == uint256("0x07cbcacfc822fba6bbeb05312258fa43b96a68fc310af8dfcec604591763f7cf"));
+
+        vSeeds.push_back(CDNSSeedData("0.0.0.0.", "0.0.0.0"));
+
 
         // Fyn Coin addresses start with 'G'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 38);
