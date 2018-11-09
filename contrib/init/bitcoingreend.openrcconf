@@ -1,0 +1,26 @@
+# /etc/conf.d/fyncoind: config file for /etc/init.d/fyncoind
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/fyncoin/fyncoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/fyncoind"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/fyncoind.pid"
+
+# Where to write fyncoind data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/fyncoind"
+
+# User and group to own fyncoind process
+#BITCOIND_USER="fyncoin"
+#BITCOIND_GROUP="fyncoin"
+
+# Path to fyncoind executable
+#BITCOIND_BIN="/usr/bin/fyncoind"
+
+# Nice value to run fyncoind under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
