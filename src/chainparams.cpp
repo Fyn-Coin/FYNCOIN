@@ -107,7 +107,7 @@ public:
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // Fyn Coin: 1 day
-        nTargetSpacing = 2 * 60;  // Fyn Coin: 2 minutes
+        nTargetSpacing = 1 * 60;  // Fyn Coin: 2 minutes
         nMaturity = 10;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 21000000 * COIN;
