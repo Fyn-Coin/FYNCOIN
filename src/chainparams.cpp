@@ -54,7 +54,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x0000098a5763d6f83a89a208d1db491bae85a254e5c349b68c5723c7e1fb1663"));
+    (0, uint256("0x"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
@@ -69,7 +69,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
 
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1516926684,
+    1740710,
     0,
     250};
 
@@ -77,7 +77,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of(0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1516926684,
+    1454124731,
     0,
     100};
 
@@ -146,11 +146,11 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1516926690;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 630531;
+        genesis.nNonce = 0;
 
         hashGenesisBlock = genesis.GetHash();
 
-/*
+
     if(genesis.GetHash() != uint256("0x"))
     {
           printf("MSearching for genesis block...\n");
@@ -176,9 +176,9 @@ public:
           printf("Mainnet block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
     }
 
-*/
-        assert(hashGenesisBlock == uint256("0x0000098a5763d6f83a89a208d1db491bae85a254e5c349b68c5723c7e1fb1663"));
-        assert(genesis.hashMerkleRoot == uint256("0xe70e020dfe9a90b7e80462de4caaf4cf14b645df0b28b84095314ce0b326e652"));
+
+        assert(hashGenesisBlock == uint256("0x"));
+        assert(genesis.hashMerkleRoot == uint256("0x"));
 
         vSeeds.push_back(CDNSSeedData("0.0.0.0.", "0.0.0.0"));
 
@@ -252,11 +252,11 @@ public:
         nMaxMoneyOut = 21000000 * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1516926690;
-        genesis.nNonce = 630531;
+        genesis.nTime = 1516926684;
+        genesis.nNonce = 21256609;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000098a5763d6f83a89a208d1db491bae85a254e5c349b68c5723c7e1fb1663"));
+        assert(hashGenesisBlock == uint256("0x000008467c3a9c587533dea06ad9380cded3ed32f9742a6c0c1aebc21bf2bc9b"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -320,13 +320,13 @@ public:
         nTargetTimespan = 24 * 60 * 60; // Fyn Coin: 1 day
         nTargetSpacing = 2 * 60;        // Fyn Coin: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1516926690;
-        genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 630531;
+        genesis.nTime = 1516926684;
+        genesis.nBits = 0x207fffff;
+        genesis.nNonce = 20542300;
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 29333;
-        assert(hashGenesisBlock == uint256("0x0000098a5763d6f83a89a208d1db491bae85a254e5c349b68c5723c7e1fb1663"));
+        assert(hashGenesisBlock == uint256("0x229874aa8a92df3347600978e226ba57bc994b9fa291ea50519afafca2d50ed3"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Regtest mode doesn't have any DNS seeds.
