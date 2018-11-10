@@ -1619,33 +1619,23 @@ int64_t GetBlockValue(int nHeight)
     int64_t nSubsidy = 0;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-        if (nHeight < 200 && nHeight > 0)
+        if (nHeight < Params().LAST_POW_BLOCK() && nHeight > 0)
             return 0 * COIN;
     }
 
-    if (nHeight == 0) {
-        nSubsidy = 1200000 * COIN; //premine
-    }
-	else if (nHeight < 10000 && nHeight > 0) {
+    if (nHeight == 1)
+        nSubsidy = 1200000 * COIN;
+    else if (nHeight <= 10000)
         nSubsidy = 1 * COIN;
-    }
-	else if (nHeight <= 25000 && nHeight >= 10001) {
+    else if (nHeight > 10000 && nHeight <= 25000)
         nSubsidy = 50 * COIN;
-    }
-	else if (nHeight <= 50000 && nHeight >= 25001) {
+    else if (nHeight > 25000 && nHeight <= 50000)
         nSubsidy = 25 * COIN;
-    }
-	else if (nHeight <= 100000 && nHeight >= 50001) {
+    else if (nHeight > 50000 && nHeight <= 100000)
         nSubsidy = 10 * COIN;
-    }
-	else if (nHeight >= 100001) {
+    else
         nSubsidy = 5 * COIN;
-    }
-    else {
-        nSubsidy = 5 * COIN;
-    }
-    return nSubsidy;
-}
+
     // Check if we reached the coin max supply.
     int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
 
