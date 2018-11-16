@@ -150,7 +150,7 @@ public:
 
         hashGenesisBlock = genesis.GetHash();
 
-    
+
     if(genesis.GetHash() != uint256("0x"))
     {
           printf("MSearching for genesis block...\n");
@@ -176,7 +176,7 @@ public:
           printf("Mainnet block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
     }
 
-    
+
         assert(hashGenesisBlock == uint256("0x"));
         assert(genesis.hashMerkleRoot == uint256("0x"));
 
@@ -184,7 +184,7 @@ public:
 
 
         // Fyn Coin addresses start with 'G'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 38);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 36);
         // Fyn Coin script addresses start with '3'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 6);
         // Fyn Coin private keys start with 'K'
