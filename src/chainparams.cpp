@@ -150,7 +150,7 @@ public:
 
         hashGenesisBlock = genesis.GetHash();
 
-    /*
+    
     if(genesis.GetHash() != uint256("0x"))
     {
           printf("MSearching for genesis block...\n");
@@ -176,7 +176,7 @@ public:
           printf("Mainnet block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
     }
 
-    */
+    
         assert(hashGenesisBlock == uint256("0x"));
         assert(genesis.hashMerkleRoot == uint256("0x"));
 
