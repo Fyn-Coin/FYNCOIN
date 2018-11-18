@@ -98,7 +98,7 @@ public:
         pchMessageStart[2] = 0x12;
         pchMessageStart[3] = 0xae;
         vAlertPubKey = ParseHex("045ad6f1551c2367f81c0ecb4d45d088298442887645a314dfcba3039401872473b0200e69d9679a0d7cc307fb9aaaacafb0cebc18050ce7c995fa19c6accc8415");
-        nDefaultPort = 9333;
+        nDefaultPort = 19333;
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         nSubsidyHalvingInterval = 1050000;
         nMaxReorganizationDepth = 100;
@@ -181,9 +181,9 @@ public:
         assert(genesis.hashMerkleRoot == uint256("0xe70e020dfe9a90b7e80462de4caaf4cf14b645df0b28b84095314ce0b326e652"));
 
         vSeeds.push_back(CDNSSeedData("0.0.0.0.", "0.0.0.0"));
-
-
-        // Fyn Coin addresses start with 'G'
+        vSeeds.push_back(CDNSSeedData("0.0.0.0.", "0.0.0.0"));
+      
+        // Fyn Coin addresses start with 'F'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 36);
         // Fyn Coin script addresses start with '3'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 6);
@@ -238,7 +238,7 @@ public:
         pchMessageStart[2] = 0x32;
         pchMessageStart[3] = 0xbc;
         vAlertPubKey = ParseHex("041b2b4c86273359acac3522471911ed2b303eaab65e8a1de01c06e89f2eab1e55234a4b504f3ce20c6f661f007d0ca15623b4358d9855c7c8ba793a24fa315e22");
-        nDefaultPort = 19333;
+        nDefaultPort = 119333;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
@@ -325,7 +325,7 @@ public:
         genesis.nNonce = 630531;
 
         hashGenesisBlock = genesis.GetHash();
-        nDefaultPort = 29333;
+        nDefaultPort = 219333;
         assert(hashGenesisBlock == uint256("0x0000098a5763d6f83a89a208d1db491bae85a254e5c349b68c5723c7e1fb1663"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
