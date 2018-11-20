@@ -180,9 +180,9 @@ public:
         assert(hashGenesisBlock == uint256("0x0000098a5763d6f83a89a208d1db491bae85a254e5c349b68c5723c7e1fb1663"));
         assert(genesis.hashMerkleRoot == uint256("0xe70e020dfe9a90b7e80462de4caaf4cf14b645df0b28b84095314ce0b326e652"));
 
-        vSeeds.push_back(CDNSSeedData("0.0.0.0.", "0.0.0.0"));
-        vSeeds.push_back(CDNSSeedData("0.0.0.0.", "0.0.0.0"));
-      
+        vSeeds.push_back(CDNSSeedData("159.89.189.118", "159.89.189.118"));
+        vSeeds.push_back(CDNSSeedData("159.89.179.83", "159.89.179.83"));
+
         // Fyn Coin addresses start with 'F'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 36);
         // Fyn Coin script addresses start with '3'
