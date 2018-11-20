@@ -832,7 +832,6 @@ QLabel#labelOverviewHeaderLeft {
 
 QLabel#labelOverviewHeaderRight {
 	qproperty-alignment: 'AlignVCenter | AlignRight';
-	background-image: url(':/images/fyncoin_logo_horizontal');
 	background-repeat: no-repeat;
 }
 
